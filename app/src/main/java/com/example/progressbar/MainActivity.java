@@ -19,12 +19,20 @@ public class MainActivity extends AppCompatActivity {
 
         progressBarCircular = findViewById(R.id.progressBarCircular);
         progressBarHorizontal = findViewById(R.id.progressBarHorizontal);
+        //Controle de visual  progressBarCircular
+        progressBarCircular.setVisibility(View.GONE);
 
     }
 
     public void carregarProgressBar(View view){
         this.progresso = this.progresso + 1;
         progressBarHorizontal.setProgress( this.progresso );
+
+        progressBarCircular.setVisibility(View.VISIBLE);
+
+        if (this.progresso == 10 ) {
+            progressBarCircular.setVisibility(View.GONE);
+        }
     }
 
 }
